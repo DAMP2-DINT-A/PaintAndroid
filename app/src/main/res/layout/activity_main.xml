@@ -8,9 +8,53 @@ android:paddingRight="@dimen/activity_horizontal_margin"
 android:paddingTop="@dimen/activity_vertical_margin"
 tools:context="com.example.asus.paint.MainActivity" >
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/hello_world" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relatLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <!--
+        LA PIZZARA ESTARIA AQUI
+        -->
+
+        <Button
+            android:text="Ensanchar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="Verde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/PISTACHO"
+            android:id="@+id/btnGreen"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+        android:text="yellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:background="@color/AMARILLO"
+        android:id="@+id/btnYellow"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Rojo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/ROJO"
+            android:id="@+id/btnRed"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
 
 </RelativeLayout>

@@ -15,27 +15,39 @@ import android.view.View;
 public class Pizarra extends View {
     private float x, y = 50;
     private String accion = "Accion";
+    public int colorido=Color.BLUE;
+    public int ancho=6;
 
-    private Paint paint;
-    private Path path;
+
+
+
+    public Paint paint;
+    public Path path;
 
     public Pizarra(Context context) {
         super(context);
         // TODO Auto-generated constructor stub
         paint = new Paint();
         path = new Path();
+
     }
+
+
 
     @Override
     protected void onDraw(Canvas canvas) {
         // TODO Auto-generated method stub
         // Rellenar canvas
+
         canvas.drawColor(Color.rgb(255, 255, 150));
 
         // Configurar lapiz
+
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(6);
-        paint.setColor(Color.BLUE);
+        paint.setStrokeWidth(ancho);
+        paint.setColor(colorido);
+
+
 
         if (accion.equals("DOWN)")){
             // Cambiar posicion comienzo path
@@ -47,6 +59,14 @@ public class Pizarra extends View {
         }
         canvas.drawPath(path, paint);
     }
+
+    public int color(int color){
+        paint.setColor(color);
+
+        return color;
+
+    }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -63,5 +83,7 @@ public class Pizarra extends View {
         invalidate();
         return true;
     }
+
+
 
 }
