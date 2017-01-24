@@ -1,5 +1,7 @@
 package com.example.asus.paint;
 
+import android.content.Intent;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +13,8 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
     Pizarra pizarra;
-    Button btnYellow,btnRed,btnPistacho;
+    Canvas canvas;
+    Button btnYellow,btnRed,btnPistacho,btnEnsanch,btnDismin,btnReinicio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         btnYellow=(Button)findViewById(R.id.btnYellow);
         btnRed=(Button)findViewById(R.id.btnRed);
         btnPistacho=(Button)findViewById(R.id.btnGreen);
+        btnEnsanch=(Button)findViewById(R.id.btnEnsanchar);
+        btnDismin=(Button)findViewById(R.id.btnDisminuir);
+        btnReinicio=(Button)findViewById(R.id.btnReinicio);
         btnYellow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +48,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 pizarra.colorido=Color.GREEN;
+            }
+        });
+
+        btnEnsanch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pizarra.ancho=16;
+            }
+        });
+
+        btnDismin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pizarra.ancho=6;
+            }
+        });
+        btnReinicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            pizarra.clearCanvas();
+
             }
         });
 

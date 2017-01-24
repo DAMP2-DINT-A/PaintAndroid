@@ -22,38 +22,74 @@ tools:context="com.example.asus.paint.MainActivity" >
         -->
 
         <Button
-            android:text="Ensanchar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:text="Verde"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/PISTACHO"
-            android:id="@+id/btnGreen"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <Button
-        android:text="yellow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_width="40sp"
+        android:layout_height="40sp"
             android:background="@color/AMARILLO"
         android:id="@+id/btnYellow"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/btnRed" />
 
         <Button
-            android:text="Rojo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_width="40sp"
+            android:layout_height="40sp"
             android:background="@color/ROJO"
             android:id="@+id/btnRed"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_toRightOf="@+id/btnYellow"
+            android:layout_toEndOf="@+id/btnYellow" />
+
+        <Button
+            android:text=""
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:background="@color/PISTACHO"
+            android:id="@+id/btnGreen"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/btnRed"
+            android:layout_toEndOf="@+id/btnRed" />
+
+        <Button
+            android:text="+"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:id="@+id/btnEnsanchar"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_alignBaseline="@+id/btnGreen"
+            android:layout_alignBottom="@+id/btnGreen"
+            android:layout_toRightOf="@+id/btnDisminuir"
+            android:layout_toEndOf="@+id/btnDisminuir" />
+
+        <Button
+            android:text="-"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:id="@+id/btnDisminuir"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_alignTop="@+id/btnEnsanchar"
+            android:layout_toRightOf="@+id/btnGreen"
+            android:layout_toEndOf="@+id/btnGreen" />
+
+        <Button
+            android:text="R"
+            android:onClick="pizarra.reiniciar()"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:id="@+id/btnReinicio"
+            android:layout_alignTop="@+id/btnEnsanchar"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp" />
     </RelativeLayout>
 
 

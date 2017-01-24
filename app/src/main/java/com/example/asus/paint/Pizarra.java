@@ -17,9 +17,7 @@ public class Pizarra extends View {
     private String accion = "Accion";
     public int colorido=Color.BLUE;
     public int ancho=6;
-
-
-
+    public boolean flag=false;
 
     public Paint paint;
     public Path path;
@@ -30,6 +28,8 @@ public class Pizarra extends View {
         paint = new Paint();
         path = new Path();
 
+
+
     }
 
 
@@ -39,23 +39,49 @@ public class Pizarra extends View {
         // TODO Auto-generated method stub
         // Rellenar canvas
 
-        canvas.drawColor(Color.rgb(255, 255, 150));
+        if(flag==false) {
 
-        // Configurar lapiz
-
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(ancho);
-        paint.setColor(colorido);
+            canvas.drawColor(Color.WHITE);
 
 
+            // Configurar lapiz
 
-        if (accion.equals("DOWN)")){
-            // Cambiar posicion comienzo path
-            path.moveTo(x, y);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(ancho);
+            paint.setColor(colorido);
+
+
+            if (accion.equals("DOWN)")) {
+                // Cambiar posicion comienzo path
+                path.moveTo(x, y);
+            }
+            if (accion.equals("MOVE")) {
+                // A�adir l�nea al path
+                path.lineTo(x, y);
+            }
+
         }
-        if (accion.equals("MOVE")){
-            // A�adir l�nea al path
-            path.lineTo(x, y);
+        if(flag){
+
+            canvas.drawColor(Color.WHITE);
+
+
+            // Configurar lapiz
+
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(ancho);
+            paint.setColor(colorido);
+
+
+            if (accion.equals("DOWN)")) {
+                // Cambiar posicion comienzo path
+                path.moveTo(x, y);
+            }
+            if (accion.equals("MOVE")) {
+                // A�adir l�nea al path
+                path.lineTo(x, y);
+            }
+
         }
         canvas.drawPath(path, paint);
     }
@@ -66,6 +92,13 @@ public class Pizarra extends View {
         return color;
 
     }
+
+    public void clearCanvas()
+    {
+        flag =true;
+        invalidate();
+    }
+
 
 
     @Override
@@ -84,6 +117,8 @@ public class Pizarra extends View {
         return true;
     }
 
-
-
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+    }
 }
